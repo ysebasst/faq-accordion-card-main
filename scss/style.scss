@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+:root {
+  // TEXT
+  --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --Soft-red: hsl(14, 88%, 65%);
+  // GRADIENT
+  --Soft-violet: hsl(273, 75%, 66%);
+  --Soft-blue: hsl(240, 73%, 65%);
+  // NEUTRAL
+  --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --Dark-grayish-blue: hsl(240, 6%, 50%);
+  // DIVIDERS
+  --Light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body {
+  background-image: linear-gradient(
+    to bottom,
+    var(--Soft-violet),
+    var(--Soft-blue)
+  );
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 1.5rem;
+}
+
+.card {
+  background-color: #fff;
+  color: var(--Very-dark-desaturated-blue);
+  border-radius: 1.5rem;
+  width: 327px;
+  &-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #illustration-woman-mobile {
+      display: block;
+      margin-left: -30px;
+      margin-top: -108px;
+      z-index: 1;
+    }
+    #bg-pattern-mobile {
+      display: block;
+      margin-top: -88px;
+      z-index: 1;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 0;
+    }
+  }
+  &-body {
+    padding: 1rem;
+    padding-bottom: 3rem;
+    .option {
+      border-bottom: 1px solid var(--Light-grayish-blue);
+      &-check {
+        display: none;
+      }
+      &-title {
+        color: var(--Very-dark-grayish-blue);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        cursor: pointer;
+        outline: none;
+      }
+      &-title:hover {
+        color: var(--Soft-red);
+      }
+      &-text {
+        display: none;
+        color: var(--Dark-grayish-blue);
+        line-height: 1.5em;
+        padding-bottom: 1rem;
+      }
+      &-check:checked ~ .option-text {
+        display: block;
+      }
+      &-check:checked ~ .option-title {
+        color: var(--Very-dark-desaturated-blue);
+        font-weight: bold;
+        img {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
